@@ -48,6 +48,6 @@ class Airplane(FlightVehicle):
         self.passenger_total = passenger_total
 
 class Starship(FlightVehicle):
-    def __init__(self, engine_size, successful_flights):
+    def __init__(self, name, engine_size, successful_flights):
         super().__init__(name, engine_size)
         self.successful_flights = successful_flights
