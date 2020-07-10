@@ -10,11 +10,6 @@ class City:
 
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
-
-
-
-
-
 # In the body of the `cityreader` function, use Python's built-in "csv" module 
 # to read this file so that each record is imported into a City instance. Then
 # return the list with all the City instances from the function.
@@ -24,15 +19,18 @@ class City:
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
+ # For each city record, create a new City instance and add it to the
+  # `cities` list
+
+  # TODO Implement the functionality to read from the 'cities.csv' file
+
 cities = []
 
 def cityreader(cities=[]):
-  # TODO Implement the functionality to read from the 'cities.csv' file
   with open('cities.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
-  # For each city record, create a new City instance and add it to the 
-  # `cities` list
-    
+    for line in csv_reader:
+      cities.append(line)
     return cities
 
 cityreader(cities)
