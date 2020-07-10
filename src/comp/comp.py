@@ -24,32 +24,22 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = []
-for n in humans:
-    #print(n.name)
-    if n.name[0] == 'D':
-        a.append(n.name)
+a = [n.name for n in humans if n.name[0] == 'D']
+
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = []
-for n in humans:
-    x = n.name
-    if x.endswith('e'):
-        b.append(n.name)
+b = [n.name for n in humans if n.name.endswith('e')]
+
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = []
-d = ['C', 'D', 'E', 'F', 'G']
-for n in humans:
-    for y in d:
-        if n.name[0] == y:
-            c.append(n.name)
+letters = ['C', 'D', 'E', 'F', 'G']
+c = [n.name for n in humans for y in letters if n.name[0] == y]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
@@ -61,46 +51,30 @@ print(d)
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = []
-for n in humans:
-    x = n.name + "-"
-    y = str(n.age)
-    z = x + y
-    e.append(z)
+e = [f"{n.name}-{n.age}" for n in humans]
+
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-f = []
-for n in humans:
-    #print(n)
-    #print(n.age)
-    if 27 <= n.age <= 32:
-        a = (n.name, n.age)
-        x = tuple(a)
-        f.append(x)
+f = [(n.name, n.age) for n in humans if 27 <= n.age <= 32]
+
 print(f)
 
 # Write a list comprehension that creates a list of new Humans like the old
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = []
-for x in humans:
-    y = x.name.upper()
-    z = x.age + 10
-    x = (y, z)
-    g.append(x)
+g = [Human(x.name.upper(), x.age + 5) for x in humans]
+
 
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
 import math
-h = []
-for n in humans:
-    x = (math.sqrt(n.age))
-    h.append(x)
+h = [math.sqrt(n.age) for n in humans]
+
 print(h)

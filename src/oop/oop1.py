@@ -18,8 +18,8 @@
 #
 # Put a comment noting which class is the base class
 class Vehicle:
-    def __init__(self, name):
-
+    def __init__(self, name='John'):
+        self.name = name
 
 class GroundVehicle(Vehicle):
     def __init__(self, name, gas_type):
