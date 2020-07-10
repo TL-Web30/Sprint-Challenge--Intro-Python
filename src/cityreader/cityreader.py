@@ -31,10 +31,8 @@ def cityreader(cities=[]):
     csv_reader = csv.DictReader(csv_file)
     #next(csv_reader)
     for line in csv_reader:
-      newLine = City(name=line['city'].strip(), lat=float(str(line['lat']).strip("0")), lon=float(str(line['lng']).strip("0")))
+      newLine = City(name=line['city'], lat=float(line["lat"]), lon=float(line["lng"]))
       cities.append(newLine)
-
-
 
     return cities
 

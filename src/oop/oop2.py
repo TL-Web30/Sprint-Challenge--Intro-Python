@@ -9,7 +9,7 @@ class GroundVehicle():
 
     # TODO
     def drive(self):
-        print("VrOooOOOm")
+        return "vroooom"
 
 toyota = GroundVehicle()
 semitruck = GroundVehicle(6)
@@ -24,7 +24,7 @@ class Motorcycle(GroundVehicle):
 
     # Override the drive() method in Motorcycle so that it returns "BRAAAP!!"
     def drive(self):
-        print("BRrRaAap!!")
+        return "BRAAAP!!"
 
 ninja = Motorcycle()
 print("motorcycle wheels", ninja.num_wheels)
@@ -43,4 +43,4 @@ vehicles = [
 
 # TODO
 for n in vehicles:
-    n.drive()
+    print(n.drive())
